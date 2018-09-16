@@ -8,7 +8,9 @@ A aplicação consiste em fornecer um determinado cep e, a partir dele, encontra
 **Cep: 01001-000**
 
 1. Acessando o webservice ViaCEP: 
-  ```viacep.com.br/ws/```**```01001000```**```/json/```
+  ```
+  viacep.com.br/ws/01001000/json/
+  ```
 
 2. ViaCEP response:
   ```
