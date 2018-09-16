@@ -102,7 +102,7 @@ http://localhost:4200
 
 1. [Angular Material Design Documentation](https://material.angular.io/)
 2. [Bootstrap v4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
-3. [Angular 2+ Text Mask](https://www.npmjs.com/package/angular2-text-mask)
+3. [Angular 2+ Text Mask](https://github.com/text-mask/text-mask/tree/master/angular2)
 4. [Angular 2+ Google Maps - AGM](https://angular-maps.com/)
 5. [ViaCEP API](https://viacep.com.br/)
 6. [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/intro)
