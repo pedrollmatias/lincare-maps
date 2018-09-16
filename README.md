@@ -8,39 +8,39 @@ A aplicação consiste em fornecer um determinado cep e, a partir dele, encontra
 **Cep: 01001-000**
 
 1. Acessando o webservice ViaCEP: 
-```viacep.com.br/ws/```**```01001000```**```/json/```
+  ```viacep.com.br/ws/```**```01001000```**```/json/```
 
 2. ViaCEP response:
-```
-{
-  "cep": "01001-000",
-  "logradouro": "Praça da Sé",
-  "complemento": "lado ímpar",
-  "bairro": "Sé",
-  "localidade": "São Paulo",
-  "uf": "SP",
-  "unidade": "",
-  "ibge": "3550308",
-  "gia": "1004"
-}
+  ```
+  {
+    "cep": "01001-000",
+    "logradouro": "Praça da Sé",
+    "complemento": "lado ímpar",
+    "bairro": "Sé",
+    "localidade": "São Paulo",
+    "uf": "SP",
+    "unidade": "",
+    "ibge": "3550308",
+    "gia": "1004"
+  }
 ```
 3. Formatando o JSON para realizar a requisição no webservice Google Maps Geocoder:
-```
-Praça+da+Sé,+Sé,+São+Paulo,+SP,+BR
-```  
-Requisição completa:  
-```
-https://maps.googleapis.com/maps/api/geocode/json?address=Praça+da+Sé,+Sé,+São+Paulo,+SP,+BR&key='MINHA_API_KEY'
-```
+  ```
+  Praça+da+Sé,+Sé,+São+Paulo,+SP,+BR
+  ```  
+  - Requisição completa:  
+  ```
+  https://maps.googleapis.com/maps/api/geocode/json?address=Praça+da+Sé,+Sé,+São+Paulo,+SP,+BR&key='MINHA_API_KEY'
+  ```
 
 4. Com a *response* do Google Maps, é possível obter a latitude e longitude do ponto desejado, utilizando o *two-way data binding* do Angular para mostrar a localização do ponto no mapa imediatamente:  
-Latitude:  
-```
--23.5503099
-```
-Longitude: 
-```
--46.6342009
+  - Latitude:  
+  ```
+  -23.5503099
+  ```
+  - Longitude: 
+  ```
+  -46.6342009
 ```
 
 ## Packages utilizados
