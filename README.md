@@ -24,7 +24,7 @@ A aplicação consiste em fornecer um determinado cep e, a partir dele, encontra
   "gia": "1004"
 }
 ```
-3. Formatando o JSON para realizar a requisação no webservice Google Maps Geocoder:
+3. Formatando o JSON para realizar a requisição no webservice Google Maps Geocoder:
 ```
 Praça+da+Sé,+Sé,+São+Paulo,+SP,+BR
 ```  
@@ -50,7 +50,7 @@ Longitude:
 4. @agm/core (Angular Google Maps)
 
 ## Utilização
-Para execução do projeto, é necessário ter instalado o ```angular-cli```, além do ```node.js``` e ```npm```. Primeiramente, é necessário baixar ou clonar a pasta *lincare-maps-project* em um diretório local. Navegue até o diretório e instale as dependencias do projeto a partir do comando:
+Para execução do projeto, é necessário ter instalado o ```angular-cli```, além do ```node.js``` e ```npm```. Primeiramente, é necessário baixar ou clonar a pasta *lincare-maps-project* em um diretório local. Navegue até o diretório e instale as dependências do projeto a partir do comando:
 ``` 
 npm install
 ```
@@ -96,7 +96,7 @@ http://localhost:4200
 |    ├── enviroment
 |    ├── ...
 ```
-*Obs: Os campos com asterísco não estão presentes no projeto real e foram colocados apenas para exemplificar uma possível expansão do projeto*
+*Obs: Os campos com asterisco não estão presentes no projeto real e foram colocados apenas para exemplificar uma possível expansão do projeto*
 
 ## Referências
 
