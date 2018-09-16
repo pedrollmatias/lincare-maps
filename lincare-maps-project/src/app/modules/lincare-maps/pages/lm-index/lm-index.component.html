@@ -1,0 +1,104 @@
+<!-- Navbar -->
+<div class="search-bar d-inblock py-3">
+  <div class="d-flex justify-content-center align-items-center">
+    <!-- Search bar -->
+    <ng-container *ngIf="showSearchBar">
+	    <!-- Logo -->
+	    <a href="lincaremaps">
+	      <img src="assets/images/lincare_logo2.svg" width="250px">
+	    </a>
+      <!-- Input -->
+      <mat-card class="cep-wrapper mat-elevation-z10 mx-3 py-1 px-4">
+        <mat-card-content>
+          <mat-form-field class="px-1 py-0">
+            <input 
+              matInput 
+              placeholder="Digite o CEP"
+              [textMask]="{mask: cepMask, guide: false}"
+              (focus)="onCepChange()"
+              [formControl]="cep">
+            <mat-error *ngIf="cep.hasError('minlength')">
+              <strong>Ops!</strong> Qua tal verificar o CEP?
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+      <!-- Button -->
+      <button 
+        mat-fab 
+        class="mat-elevation-z10 mt-1" 
+        color="primary" 
+        (click)="getAddress(cep)"
+        [disabled]="!showSearchButton">
+        <mat-icon>search</mat-icon>
+      </button>
+    </ng-container>
+  </div>
+</div>
+
+<!-- Loading icon -->
+<mat-spinner class="loading-icon" *ngIf="loadingIcon"></mat-spinner>
+
+<!-- Full Screen Google Map -->
+<agm-map  [latitude]="lat" 
+          [longitude]="lng"
+          [zoom]="18">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
+<!-- Address Box showed when cep matches -->
+<mat-card class="address-box mat-elevation-z10 m-4 p-4"
+          *ngIf="isValidCep && showSearchBar && !cep.hasError('minlength')">
+  <mat-card-content class="d-flex flex-column">
+    <div class="d-flex justify-content-center mb-2">
+      <button mat-mini-fab class="mat-elevation-z0" color="accent">
+        <mat-icon>home</mat-icon>
+      </button>
+      <span class="mat-title mt-1 ml-3">Endereço</span>
+    </div>
+    <mat-chip-list class="mat-chip-list-stacked">
+      <mat-chip 
+        class="mat-elevation-z1" 
+        color="primary"
+        *ngIf="address.logradouro"
+        selected>
+        <span class="mat-subheading-1 m-0">{{address.logradouro}}</span>
+      </mat-chip>
+      <mat-chip 
+        class="mat-elevation-z1" 
+        color="primary" 
+        *ngIf="address.complemento"
+        selected>
+        <span class="mat-subheading-1 m-0">{{address.complemento}}</span>
+      </mat-chip>
+      <mat-chip 
+        class="mat-elevation-z1" 
+        color="primary" 
+        *ngIf="address.bairro && address.localidade && address.uf"
+        selected>
+        <span class="mat-subheading-1 m-0">{{address.bairro}}, {{address.localidade}} - {{address.uf}}</span>
+      </mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+</mat-card>
+
+<!-- Searbar and Address Box button toggle -->
+<ng-container *ngIf="showSearchBar; else setSearchBarVisible">
+  <button 
+    mat-fab
+    class="show-searchbar-button mat-elevation-z10 m-5" 
+    color="primary"
+    (click)="showSearchBar = !showSearchBar">
+    <mat-icon>visibility_off</mat-icon>
+  </button>
+</ng-container>
+
+<ng-template #setSearchBarVisible>
+  <button 
+    mat-fab
+    class="show-searchbar-button mat-elevation-z10 m-5" 
+    color="primary"
+    (click)="showSearchBar = !showSearchBar">
+    <mat-icon>location_searching</mat-icon>
+  </button>
+</ng-template>

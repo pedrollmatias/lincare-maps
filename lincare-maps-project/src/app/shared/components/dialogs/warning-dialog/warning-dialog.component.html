@@ -1,0 +1,12 @@
+<div class="d-flex flex-column">
+	<div class="d-flex d-inline justify-content-center">
+		<mat-icon class="btn-large mr-3 mt-1" color="warn">{{data.icon}}</mat-icon>
+		<p mat-dialog-title>{{data.title}}</p>
+	</div>
+	<div class="d-flex justify-content-center py-2">
+		<p>{{data.content}}</p>
+	</div>
+	<div class="d-flex justify-content-center">
+	  <button mat-button class="mat-elevation-z0" [mat-dialog-close]="true" cdkFocusInitial>Ok</button>
+	</div>
+</div>
